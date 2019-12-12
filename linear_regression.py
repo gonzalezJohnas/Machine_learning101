@@ -25,7 +25,7 @@ def linear_regression(x,y):
 
     print("Variance {}".format(np.mean(y_var)))
 
-    plt.scatter(x, y, s=10)
+    plt.scatter(x, y, s=50)
     plt.plot(x, y_pred, color='r', label='linear regression')
 
 
@@ -51,7 +51,7 @@ def polynomial(x, y, degree, color):
     sort_axis = operator.itemgetter(0)
     sorted_zip = sorted(zip(x, y_poly_pred), key=sort_axis)
     x, y_poly_pred = zip(*sorted_zip)
-    plt.plot(x, y_poly_pred, color=color, label='Degree {}'.format(degree))
+    plt.plot(x, y_poly_pred, color=color, label='Polynomial model degree  {}'.format(degree))
 
 
 def main():
@@ -73,6 +73,7 @@ def main():
     print("Polynomial model degree 2")
     polynomial(x, y, 2, "g")
     plt.legend( loc='upper left' )
+    plt.tick_params(top='off', bottom='on', left='on', right='off', labelleft='on', labelbottom='on')
     plt.show()
 
 
